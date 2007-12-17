@@ -24,7 +24,6 @@ BuildRequires:	perl(SQL::Abstract) >= 1.20
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::More)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Portability layer for LIMIT emulation.
