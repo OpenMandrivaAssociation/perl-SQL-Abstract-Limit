@@ -2,9 +2,9 @@
 %define name	perl-%{module}
 %define	modprefix SQL
 
-%define version 0.12
+%define version 0.141
 
-%define	rel	3
+%define	rel	1
 %define release %mkrel %{rel}
 
 Name:		%{name}
