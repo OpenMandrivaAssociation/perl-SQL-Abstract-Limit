@@ -13,22 +13,19 @@ Release:	%{release}
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Portable LIMIT emulation
-Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{modprefix}/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+Source:     http://www.cpan.org/modules/by-module/SQL/%{module}-%{version}.tar.bz2
 BuildRequires:	perl(DBI)
 BuildRequires:  perl(Module::Build)
 BuildRequires:	perl(SQL::Abstract) >= 1.20
 BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Test::Deep)
 BuildRequires:	perl(Test::More)
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Portability layer for LIMIT emulation.
-
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -52,6 +49,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/%{modprefix}
 %{_mandir}/man*/*
-
-
-
