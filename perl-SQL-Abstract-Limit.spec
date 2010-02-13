@@ -1,34 +1,31 @@
-%define module	SQL-Abstract-Limit
-%define name	perl-%{module}
-%define	modprefix SQL
+%define upstream_name	 SQL-Abstract-Limit
+%define upstream_version 0.141
 
-%define version 0.141
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 3
 
-%define	rel	2
-%define release %mkrel %{rel}
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	GPL or Artistic
-Group:		Development/Perl
 Summary:	Portable LIMIT emulation
-Url:		http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/SQL/%{module}-%{version}.tar.bz2
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/SQL/%{upstream_name}-%{upstream_version}.tar.bz2
+
 BuildRequires:	perl(DBI)
 BuildRequires:  perl(Module::Build)
 BuildRequires:	perl(SQL::Abstract) >= 1.20
 BuildRequires:	perl(Test::Exception)
 BuildRequires:	perl(Test::Deep)
 BuildRequires:	perl(Test::More)
+
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Portability layer for LIMIT emulation.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor destdir=%{buildroot}
@@ -47,5 +44,5 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc Changes README
-%{perl_vendorlib}/%{modprefix}
+%{perl_vendorlib}/SQL
 %{_mandir}/man*/*
