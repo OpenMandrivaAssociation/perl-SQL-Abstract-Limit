@@ -1,15 +1,15 @@
 %define upstream_name	 SQL-Abstract-Limit
-%define upstream_version 0.141
+%define upstream_version 0.143
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Portable LIMIT emulation
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/SQL/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://github.com/asb-capfan/SQL-Abstract-Limit
+Source0:	https://cpan.metacpan.org/authors/id/A/AS/ASB/SQL-Abstract-Limit-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(DBI)
