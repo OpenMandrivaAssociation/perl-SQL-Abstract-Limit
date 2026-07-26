@@ -1,15 +1,13 @@
 %define upstream_name	 SQL-Abstract-Limit
-%define upstream_version 0.143
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.143
+Release:	2
 
 Summary:	Portable LIMIT emulation
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/asb-capfan/SQL-Abstract-Limit
-Source0:	https://cpan.metacpan.org/authors/id/A/AS/ASB/SQL-Abstract-Limit-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/A/AS/ASB/SQL-Abstract-Limit-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(DBI)
@@ -25,7 +23,7 @@ BuildArch:	noarch
 Portability layer for LIMIT emulation.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor destdir=%{buildroot}
@@ -45,9 +43,7 @@ perl Build.PL installdirs=vendor destdir=%{buildroot}
 %changelog
 * Sat Feb 13 2010 Jérôme Quelin <jquelin@mandriva.org> 0.141.0-3mdv2010.1
 + Revision: 505283
-- rebuild using %%perl_convert_version
-
-* Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 0.141-2mdv2010.0
+- rebuild using %0.143 Mon Sep 14 2009 Thierry Vignaud <tv@mandriva.org> 0.141-2mdv2010.0
 + Revision: 440637
 - rebuild
 
